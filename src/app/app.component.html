@@ -1,0 +1,16 @@
+<div class="chat-container">
+  <h1 class="heading bounce">
+  <span class="emoji">☕🫖</span> Chai P Charcha <span class="emoji">🍵🧋😉</span>
+  <div class="underline"></div>
+</h1>
+  <div class="chat-box" *ngFor="let msg of messages">
+    <div *ngIf ="msg.role != 'system'" [ngClass]="{'user-msg': msg.role === 'user', 'bot-msg': msg.role === 'assistant'}">
+      {{ msg.content }}
+    </div>
+  </div>
+
+  <div class="input-area">
+    <input [(ngModel)]="userInput" placeholder="Ask Hitesh anything..." (keyup.enter)="sendAIMessage()" />
+    <button (click)="sendAIMessage()">Send</button>
+  </div>
+</div>

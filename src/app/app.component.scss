@@ -1,0 +1,125 @@
+.chat-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  border: 2px solid #eee;
+  border-radius: 12px;
+  background-color: #f9f9f9;
+  height: 500px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-box {
+  display: flex;
+  flex-direction: column;
+  margin: 5px 0;
+}
+
+.user-msg, .bot-msg {
+  max-width: 70%;
+  padding: 10px 15px;
+  border-radius: 16px;
+  margin-bottom: 8px;
+  word-wrap: break-word;
+}
+
+.user-msg {
+  align-self: flex-end;
+  background-color: pink;
+}
+
+.bot-msg {
+  align-self: flex-start;
+  background-color: rgb(152, 180, 110);
+}
+
+.input-area {
+  display: flex;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 10px;
+}
+
+input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+button {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  background-color: green;
+  color: white;
+  cursor: pointer;
+}
+.heading {
+  text-align: center;
+  position: relative;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-top: 20px;
+  animation: bounceIn 1s ease;
+}
+
+.underline {
+  width: 180px;
+  height: 4px;
+  background: linear-gradient(to right, #ff9800, #ff5722);
+  margin: 0.5rem auto 0;
+  animation: slideIn 1s ease forwards;
+  border-radius: 2px;
+}
+
+/* Bounce animation */
+@keyframes bounceIn {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(10px);
+    opacity: 1;
+  }
+  80% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Slide-in for underline */
+@keyframes slideIn {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  100% {
+    width: 180px;
+    opacity: 1;
+  }
+}
+
+/* Emoji wiggle animation */
+.emoji {
+  display: inline-block;
+  animation: wiggle 1.5s infinite ease-in-out;
+}
+
+@keyframes wiggle {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(10deg);
+  }
+  75% {
+    transform: rotate(-10deg);
+  }
+}
